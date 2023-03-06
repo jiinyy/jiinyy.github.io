@@ -1,19 +1,19 @@
 # Site settings
-title:          Tale
-description:    "Minimal Jekyll theme for storytellers"
-baseurl:        "/tale"
-url:            "https://chesterhow.github.io"
+title:          Dev Story
+description:    "Dev Story"
+baseurl:        ""
+url:            "https://jiinyy.github.io"
 
 # Google Analytics
 google_analytics: UA—XXXXXXXX-X
 
 # Author
 author:
-  name:         Chester How
-  url:          https://chester.how
-  email:        chesterhow@gmail.com
+  name:         Jihyun Bang
+  url:          https://jiinyy.github.io
+  email:        
 
-# Remote
+# Themes
 remote_theme: chesterhow/tale
 
 # Build settings
@@ -40,6 +40,3 @@ paginate:       5
 
 # Excludes
 exclude: [ Gemfile, Gemfile.lock, tale.gemspec ]
-
-# Disqus (Set to your disqus id)
-disqus:         jekyll-tale
