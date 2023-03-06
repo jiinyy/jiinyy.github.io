@@ -1,24 +1,45 @@
-title: IT-блог
-description: > # this means to ignore newlines until "baseurl:"
-  Blog with theme Future Imperfect<br>
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://jiinyy.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+# Site settings
+title:          Tale
+description:    "Minimal Jekyll theme for storytellers"
+baseurl:        "/tale"
+url:            "https://chesterhow.github.io"
 
+# Google Analytics
+google_analytics: UA—XXXXXXXX-X
 
+# Author
 author:
-  name: 'Jihyun'
-  last_name: 'Bang'
-  cv: '//kaptn.ru'
-  avatar: '/images/avatar.jpeg'
-  github_username: jiinyy
-  email: 
-  vk_id: 
-  telegram_name: 
-  logo: '/images/logo.svg'
+  name:         Chester How
+  url:          https://chester.how
+  email:        chesterhow@gmail.com
+
+# Remote
+remote_theme: chesterhow/tale
 
 # Build settings
-markdown: kramdown
+markdown:       kramdown
+include:
+  - _pages
 
-permalink: /:categories/:year/:title.html
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        compressed
 
+# Gems
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-remote-theme
+  # - jemoji #Uncomment this to allow emoji in your post
 
+# Permalinks
+permalink:      /:year-:month-:day/:title
+paginate:       5
+
+# Excludes
+exclude: [ Gemfile, Gemfile.lock, tale.gemspec ]
+
+# Disqus (Set to your disqus id)
+disqus:         jekyll-tale
