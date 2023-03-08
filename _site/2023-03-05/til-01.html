@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>반복문 | Dev Story</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="반복문" />
+<meta name="author" content="Jihyun Bang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="while 문" />
+<meta property="og:description" content="while 문" />
+<link rel="canonical" href="http://localhost:4000/2023-03-05/til-01" />
+<meta property="og:url" content="http://localhost:4000/2023-03-05/til-01" />
+<meta property="og:site_name" content="Dev Story" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-03-05T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="반복문" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jihyun Bang"},"dateModified":"2023-03-05T00:00:00+09:00","datePublished":"2023-03-05T00:00:00+09:00","description":"while 문","headline":"반복문","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2023-03-05/til-01"},"url":"http://localhost:4000/2023-03-05/til-01"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Dev Story" />
+
+  <!-- Google Analytics-->
+  
+</head>
+
+
+  <body>
+
+    <nav class="nav">
+  <div class="nav-container">
+    <a href="/">
+      <h2 class="nav-title">Dev Story</h2>
+    </a>
+    <ul>
+      <li><a href="/">Posts</a></li>
+      <li><a href="/tags">Tags</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+    <main>
+      <div class="post">
+  <div class="post-info">
+    <span>Written by</span>
+    
+        Jihyun Bang
+    
+
+    
+      <br>
+      <span>on&nbsp;</span><time datetime="2023-03-05 00:00:00 +0900">March 05, 2023</time>
+    
+  </div>
+
+  <h1 class="post-title">반복문</h1>
+  <div class="post-line"></div>
+
+  <h1 id="while-문">while 문</h1>
+
+<h3 id="반복문"><strong>반복문</strong></h3>
+
+<p>조건에 따라 프로그램의 일정 코드를 반복적으로 수행할 수 있도록 하는 구문</p>
+
+<h3 id="while"><strong>while</strong></h3>
+
+<p>조건이 만족하는 동안 반복실행될 코드를 계속 실행</p>
+
+<p><code class="language-plaintext highlighter-rouge">while( */*조건식*/* ){
+    */* 반복 실행될 코드 */*}</code></p>
+
+<h3 id="continue-break"><strong>continue, break;</strong></h3>
+
+<ul>
+  <li>continue : 남은 반복실행될 코드를 모두 skip</li>
+  <li>break : 반복문에서 즉시 탈출</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function sumFrom1ToN(n){
+    var count = 1;
+    var sum=0;
+
+    while( count&lt;= n ){
+        sum = sum +count;
+        count++;
+    }
+    return sum;
+}
+</code></pre></div></div>
+
+<h1 id="do-while-문">do while 문</h1>
+
+<h3 id="do-while"><strong>do, while</strong></h3>
+
+<p>한번은 코드가 실행되고, 이후에 반복실행될지 말지를 결정</p>
+
+<p><code class="language-plaintext highlighter-rouge">do{
+    */* 반복 실행될 코드 */*}while( */*조건식*/* );</code></p>
+
+<h3 id="조건식이-거짓false-일-때"><strong>조건식이 거짓(False) 일 때,</strong></h3>
+
+<ul>
+  <li>while : 한번도 실행되지 않음</li>
+  <li>do, while : 한번은 실행되고 종료</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var cond = false;
+
+while (cond) {
+	console.log("이 구문은 실행되지 않습니다.");
+}
+
+do {
+	console.log("이 구문은 한번은 실행합니다.");
+}while(cond);
+
+do {
+	var ans = parseInt (promp("1+1=?"));
+}while(ans !=2 );
+
+console.log("맞췄습니다.");
+</code></pre></div></div>
+
+<hr />
+
+<h1 id="for-문">for 문</h1>
+
+<h3 id="for"><strong>for</strong></h3>
+
+<p>초기구문, 업데이트 구문, 반복조건 을 한 구문에 합친 반복문.</p>
+
+<h3 id="04까지-더하는-동일한-while문과-for문"><strong>0~4까지 더하는 동일한 while문과 for문.</strong></h3>
+
+<h3 id="while-문-1">while 문</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//초기 설정 코드</span>
+<span class="nf">while </span><span class="p">(</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="cm">/*조건식*/</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">sum</span> <span class="o">=</span> <span class="nx">sum</span> <span class="o">+</span> <span class="nx">i</span><span class="p">;</span>
+    <span class="nx">i</span><span class="o">++</span><span class="p">;</span> <span class="c1">//업데이트 코드</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="for문">for문</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="nf">for</span><span class="p">(</span> <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">sum</span> <span class="o">=</span> <span class="nx">sum</span> <span class="o">+</span> <span class="nx">i</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>for 문에서 continue 문을 만나면 update 문 실행 후 조건식을 비교 (update 문 = i++)</p>
+
+<p>while 문에서 continue 문을 만났다면 반복실행 끝으로 이동 후 바로 조건식을 비교</p>
+
+<h1 id="for-in문">for in문</h1>
+
+<h3 id="for-in"><strong>for in</strong></h3>
+
+<p>객체의 각 엘리먼트에 접근할 수 있는 반복문.</p>
+
+<h3 id="객체의-속성들을-출력하는-동일한-코드"><strong>객체의 속성들을 출력하는 동일한 코드</strong></h3>
+
+<h3 id="for-구문-사용">for 구문 사용</h3>
+
+<p>`var property_list = Object.keys(obj);</p>
+
+<p>for( var i=0 ; i&lt;property_list.length ; i++ ){
+    var propertyName = property_list[i];
+    console.log( “\t”, propertyName, “: “, obj[propertyName] );
+}`</p>
+
+<h3 id="for-in-구문-사용">for in 구문 사용</h3>
+
+<p><code class="language-plaintext highlighter-rouge">for( var propertyName in obj ){
+    console.log( "\t", propertyName, ": ", obj[propertyName] );
+}</code></p>
+
+</div>
+
+
+
+<div class="pagination">
+  
+    <a href="/2023-03-06/pagination-post" class="left arrow">&#8592;</a>
+  
+  
+    <a href="/2021-05-03/sticky-posts" class="right arrow">&#8594;</a>
+  
+
+  <a href="#" class="top">Top</a>
+</div>
+    </main>
+
+    <footer>
+  <span>
+    &copy; <time datetime="2023-03-08 21:59:45 +0900">2023</time> Jihyun Bang. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
+  </span>
+</footer>
+
+  </body>
+</html>

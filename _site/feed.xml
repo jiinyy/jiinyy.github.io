@@ -1,4 +1,148 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/tale/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/tale/" rel="alternate" type="text/html" /><updated>2023-03-06T22:28:05+09:00</updated><id>http://localhost:4000/tale/feed.xml</id><title type="html">Tale</title><subtitle>Minimal Jekyll theme for storytellers</subtitle><author><name>Chester How</name><email>chesterhow@gmail.com</email></author><entry><title type="html">Sticky Posts</title><link href="http://localhost:4000/tale/2021-05-03/sticky-posts" rel="alternate" type="text/html" title="Sticky Posts" /><published>2021-05-03T00:00:00+09:00</published><updated>2021-05-03T00:00:00+09:00</updated><id>http://localhost:4000/tale/2021-05-03/sticky-posts</id><content type="html" xml:base="http://localhost:4000/tale/2021-05-03/sticky-posts"><![CDATA[<p>Sticky, or pinned, posts are featured on the top of every page. Tale provides some flexibility when it comes to this feature.<!--more--> There is no limit on the number of sticky posts you can have. Although do note that each page will show all your sticky posts + the paginated posts. So if you have 4 sticky posts and 5 posts per page, each page can display up to 9 posts.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-08T21:59:45+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dev Story</title><subtitle>Dev Story</subtitle><author><name>Jihyun Bang</name></author><entry><title type="html">Pagination Post</title><link href="http://localhost:4000/2023-03-06/pagination-post" rel="alternate" type="text/html" title="Pagination Post" /><published>2023-03-06T00:00:00+09:00</published><updated>2023-03-06T00:00:00+09:00</updated><id>http://localhost:4000/2023-03-06/pagination-post</id><content type="html" xml:base="http://localhost:4000/2023-03-06/pagination-post"><![CDATA[<p>Here we see <strong>Tale’s</strong> pagination feature in action. It is set to 5 posts per page by default. Feel free to change this number in the <code class="language-plaintext highlighter-rouge">_config.yml</code> file!</p>
+
+<h1 id="switch-문">switch 문</h1>
+
+<h3 id="switch-case"><strong>switch, case</strong></h3>
+
+<p>조건에 따라 프로그램의 흐름을 분기해서 특정 코드가 실행되도록 함</p>
+
+<p>`switch( <em>/</em>비교할 값<em>/</em> ){
+    case <em>/</em>값1<em>/</em>:
+        <em>/</em>비교할 값이 값1인 경우 실행될 코드<em>/</em>break;
+    case <em>/</em>값2<em>/</em>:
+        <em>/</em>비교할 값이 값2인 경우 실행될 코드<em>/</em>break;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*/*
+... 여러개의 case
+*/*default:
+    */*비교할 값이 위의 모든 값과 다른 경우 실행될 코드*/*break; }`
+</code></pre></div></div>
+
+<h3 id="break"><strong>break</strong></h3>
+
+<p>break구문을 만나면, switch-case 문의 마지막 중괄호(}) 밖으로 빠져나옴.</p>
+
+<ul>
+  <li>break를 사용하지 않으면, switch문에서 빠져나오지 않고 다음 case에 해당하는 코드까지 실행됨.</li>
+</ul>]]></content><author><name>방지현</name></author><category term="Javascript" /><summary type="html"><![CDATA[Here we see Tale’s pagination feature in action. It is set to 5 posts per page by default. Feel free to change this number in the _config.yml file!]]></summary></entry><entry><title type="html">반복문</title><link href="http://localhost:4000/2023-03-05/til-01" rel="alternate" type="text/html" title="반복문" /><published>2023-03-05T00:00:00+09:00</published><updated>2023-03-05T00:00:00+09:00</updated><id>http://localhost:4000/2023-03-05/til-01</id><content type="html" xml:base="http://localhost:4000/2023-03-05/til-01"><![CDATA[<h1 id="while-문">while 문</h1>
+
+<h3 id="반복문"><strong>반복문</strong></h3>
+
+<p>조건에 따라 프로그램의 일정 코드를 반복적으로 수행할 수 있도록 하는 구문</p>
+
+<h3 id="while"><strong>while</strong></h3>
+
+<p>조건이 만족하는 동안 반복실행될 코드를 계속 실행</p>
+
+<p><code class="language-plaintext highlighter-rouge">while( */*조건식*/* ){
+    */* 반복 실행될 코드 */*}</code></p>
+
+<h3 id="continue-break"><strong>continue, break;</strong></h3>
+
+<ul>
+  <li>continue : 남은 반복실행될 코드를 모두 skip</li>
+  <li>break : 반복문에서 즉시 탈출</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function sumFrom1ToN(n){
+    var count = 1;
+    var sum=0;
+
+    while( count&lt;= n ){
+        sum = sum +count;
+        count++;
+    }
+    return sum;
+}
+</code></pre></div></div>
+
+<h1 id="do-while-문">do while 문</h1>
+
+<h3 id="do-while"><strong>do, while</strong></h3>
+
+<p>한번은 코드가 실행되고, 이후에 반복실행될지 말지를 결정</p>
+
+<p><code class="language-plaintext highlighter-rouge">do{
+    */* 반복 실행될 코드 */*}while( */*조건식*/* );</code></p>
+
+<h3 id="조건식이-거짓false-일-때"><strong>조건식이 거짓(False) 일 때,</strong></h3>
+
+<ul>
+  <li>while : 한번도 실행되지 않음</li>
+  <li>do, while : 한번은 실행되고 종료</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var cond = false;
+
+while (cond) {
+	console.log("이 구문은 실행되지 않습니다.");
+}
+
+do {
+	console.log("이 구문은 한번은 실행합니다.");
+}while(cond);
+
+do {
+	var ans = parseInt (promp("1+1=?"));
+}while(ans !=2 );
+
+console.log("맞췄습니다.");
+</code></pre></div></div>
+
+<hr />
+
+<h1 id="for-문">for 문</h1>
+
+<h3 id="for"><strong>for</strong></h3>
+
+<p>초기구문, 업데이트 구문, 반복조건 을 한 구문에 합친 반복문.</p>
+
+<h3 id="04까지-더하는-동일한-while문과-for문"><strong>0~4까지 더하는 동일한 while문과 for문.</strong></h3>
+
+<h3 id="while-문-1">while 문</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//초기 설정 코드</span>
+<span class="nf">while </span><span class="p">(</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="cm">/*조건식*/</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">sum</span> <span class="o">=</span> <span class="nx">sum</span> <span class="o">+</span> <span class="nx">i</span><span class="p">;</span>
+    <span class="nx">i</span><span class="o">++</span><span class="p">;</span> <span class="c1">//업데이트 코드</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="for문">for문</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="nf">for</span><span class="p">(</span> <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">sum</span> <span class="o">=</span> <span class="nx">sum</span> <span class="o">+</span> <span class="nx">i</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>for 문에서 continue 문을 만나면 update 문 실행 후 조건식을 비교 (update 문 = i++)</p>
+
+<p>while 문에서 continue 문을 만났다면 반복실행 끝으로 이동 후 바로 조건식을 비교</p>
+
+<h1 id="for-in문">for in문</h1>
+
+<h3 id="for-in"><strong>for in</strong></h3>
+
+<p>객체의 각 엘리먼트에 접근할 수 있는 반복문.</p>
+
+<h3 id="객체의-속성들을-출력하는-동일한-코드"><strong>객체의 속성들을 출력하는 동일한 코드</strong></h3>
+
+<h3 id="for-구문-사용">for 구문 사용</h3>
+
+<p>`var property_list = Object.keys(obj);</p>
+
+<p>for( var i=0 ; i&lt;property_list.length ; i++ ){
+    var propertyName = property_list[i];
+    console.log( “\t”, propertyName, “: “, obj[propertyName] );
+}`</p>
+
+<h3 id="for-in-구문-사용">for in 구문 사용</h3>
+
+<p><code class="language-plaintext highlighter-rouge">for( var propertyName in obj ){
+    console.log( "\t", propertyName, ": ", obj[propertyName] );
+}</code></p>]]></content><author><name>Jihyun Bang</name></author><category term="Javascript" /><summary type="html"><![CDATA[while 문]]></summary></entry><entry><title type="html">Sticky Posts</title><link href="http://localhost:4000/2021-05-03/sticky-posts" rel="alternate" type="text/html" title="Sticky Posts" /><published>2021-05-03T00:00:00+09:00</published><updated>2021-05-03T00:00:00+09:00</updated><id>http://localhost:4000/2021-05-03/sticky-posts</id><content type="html" xml:base="http://localhost:4000/2021-05-03/sticky-posts"><![CDATA[<p>Sticky, or pinned, posts are featured on the top of every page. Tale provides some flexibility when it comes to this feature.<!--more--> There is no limit on the number of sticky posts you can have. Although do note that each page will show all your sticky posts + the paginated posts. So if you have 4 sticky posts and 5 posts per page, each page can display up to 9 posts.</p>
 
 <h2 id="making-a-post-sticky">Making a post “sticky”</h2>
 
@@ -10,7 +154,7 @@
 
 <h2 id="example">Example</h2>
 
-<p>See the <a href="https://github.com/chesterhow/tale/blob/master/_posts/2017-03-29-introducing-tale.md">“Introducing Tale” post</a>.</p>]]></content><author><name>Chester</name></author><category term="Tutorial" /><summary type="html"><![CDATA[Sticky, or pinned, posts are featured on the top of every page. Tale provides some flexibility when it comes to this feature.]]></summary></entry><entry><title type="html">Managing Excerpt</title><link href="http://localhost:4000/tale/2021-04-30/managing-excerpt" rel="alternate" type="text/html" title="Managing Excerpt" /><published>2021-04-30T00:00:00+09:00</published><updated>2021-04-30T00:00:00+09:00</updated><id>http://localhost:4000/tale/2021-04-30/managing-excerpt</id><content type="html" xml:base="http://localhost:4000/tale/2021-04-30/managing-excerpt"><![CDATA[<p>You can customise the excerpt (the text displayed below each post on the homepage) using the <code class="language-plaintext highlighter-rouge">excerpt-separator</code>.<!--more--> Here’s how you can do so!</p>
+<p>See the <a href="https://github.com/chesterhow/tale/blob/master/_posts/2017-03-29-introducing-tale.md">“Introducing Tale” post</a>.</p>]]></content><author><name>Chester</name></author><category term="Tutorial" /><summary type="html"><![CDATA[Sticky, or pinned, posts are featured on the top of every page. Tale provides some flexibility when it comes to this feature.]]></summary></entry><entry><title type="html">Managing Excerpt</title><link href="http://localhost:4000/2021-04-30/managing-excerpt" rel="alternate" type="text/html" title="Managing Excerpt" /><published>2021-04-30T00:00:00+09:00</published><updated>2021-04-30T00:00:00+09:00</updated><id>http://localhost:4000/2021-04-30/managing-excerpt</id><content type="html" xml:base="http://localhost:4000/2021-04-30/managing-excerpt"><![CDATA[<p>You can customise the excerpt (the text displayed below each post on the homepage) using the <code class="language-plaintext highlighter-rouge">excerpt-separator</code>.<!--more--> Here’s how you can do so!</p>
 
 <h2 id="steps">Steps</h2>
 
@@ -29,7 +173,7 @@
 
 <h2 id="example">Example</h2>
 
-<p>See <a href="https://github.com/chesterhow/tale/blob/master/_posts/2021-04-30-managing-excerpt.md">this post</a> or the <a href="https://github.com/chesterhow/tale/blob/master/_posts/2017-03-29-introducing-tale.md">“Introducing Tale” post</a>.</p>]]></content><author><name>Chester</name></author><category term="Tutorial" /><summary type="html"><![CDATA[You can customise the excerpt (the text displayed below each post on the homepage) using the excerpt-separator.]]></summary></entry><entry><title type="html">Introducing Tale</title><link href="http://localhost:4000/tale/2017-03-29/introducing-tale" rel="alternate" type="text/html" title="Introducing Tale" /><published>2017-03-29T00:00:00+09:00</published><updated>2017-03-29T00:00:00+09:00</updated><id>http://localhost:4000/tale/2017-03-29/introducing-tale</id><content type="html" xml:base="http://localhost:4000/tale/2017-03-29/introducing-tale"><![CDATA[<p>Tale is a minimal <a href="https://jekyllrb.com/">Jekyll</a> theme curated for storytellers. It is designed and developed by <a href="https://github.com/chesterhow/">myself</a> for a friend who writes short stories.<!--more--></p>
+<p>See <a href="https://github.com/chesterhow/tale/blob/master/_posts/2021-04-30-managing-excerpt.md">this post</a> or the <a href="https://github.com/chesterhow/tale/blob/master/_posts/2017-03-29-introducing-tale.md">“Introducing Tale” post</a>.</p>]]></content><author><name>Chester</name></author><category term="Tutorial" /><summary type="html"><![CDATA[You can customise the excerpt (the text displayed below each post on the homepage) using the excerpt-separator.]]></summary></entry><entry><title type="html">Introducing Tale</title><link href="http://localhost:4000/2017-03-29/introducing-tale" rel="alternate" type="text/html" title="Introducing Tale" /><published>2017-03-29T00:00:00+09:00</published><updated>2017-03-29T00:00:00+09:00</updated><id>http://localhost:4000/2017-03-29/introducing-tale</id><content type="html" xml:base="http://localhost:4000/2017-03-29/introducing-tale"><![CDATA[<p>Tale is a minimal <a href="https://jekyllrb.com/">Jekyll</a> theme curated for storytellers. It is designed and developed by <a href="https://github.com/chesterhow/">myself</a> for a friend who writes short stories.<!--more--></p>
 
 <h2 id="tale-features">Tale features</h2>
 <ul>
@@ -44,7 +188,7 @@
   <li>Disqus comments</li>
 </ul>
 
-<p>Head over to the <a href="/tale/2017-03-16/example-content">Example Content</a> post for a showcase of Tale’s text formatting features.</p>
+<p>Head over to the <a href="/2017-03-16/example-content">Example Content</a> post for a showcase of Tale’s text formatting features.</p>
 
 <h2 id="browser-support">Browser Support</h2>
 <p>Tale works on most if not all modern browsers, including Chrome, Safari and Firefox 👍🏼</p>
@@ -52,7 +196,7 @@
 <h2 id="download-or-contribute">Download or Contribute</h2>
 <p>Tale is publicly hosted on GitHub, so go ahead and download or fork it at the <a href="https://github.com/chesterhow/tale">GitHub repository</a>. If you spot any bugs or have any suggestions, feel free to create an issue or make a pull request.</p>
 
-<p>Thanks for checking out Tale!</p>]]></content><author><name>Chester</name></author><category term="Tale" /><summary type="html"><![CDATA[Tale is a minimal Jekyll theme curated for storytellers. It is designed and developed by myself for a friend who writes short stories.]]></summary></entry><entry><title type="html">Example Content</title><link href="http://localhost:4000/tale/2017-03-16/example-content" rel="alternate" type="text/html" title="Example Content" /><published>2017-03-16T00:00:00+09:00</published><updated>2017-03-16T00:00:00+09:00</updated><id>http://localhost:4000/tale/2017-03-16/example-content</id><content type="html" xml:base="http://localhost:4000/tale/2017-03-16/example-content"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt ornare nibh, non elementum augue tempus eget. Pellentesque tempus scelerisque iaculis.<!--more--> Nullam interdum ultricies nibh quis sollicitudin. Donec ornare fermentum facilisis. Ut at sem ac sem imperdiet varius a eget tortor. Nam eu augue eget orci semper maximus in eget augue. Mauris ornare, nisl ut suscipit consectetur, mi quam interdum tellus, at rutrum quam eros ultrices mi.</p>
+<p>Thanks for checking out Tale!</p>]]></content><author><name>Chester</name></author><category term="Tale" /><summary type="html"><![CDATA[Tale is a minimal Jekyll theme curated for storytellers. It is designed and developed by myself for a friend who writes short stories.]]></summary></entry><entry><title type="html">Example Content</title><link href="http://localhost:4000/2017-03-16/example-content" rel="alternate" type="text/html" title="Example Content" /><published>2017-03-16T00:00:00+09:00</published><updated>2017-03-16T00:00:00+09:00</updated><id>http://localhost:4000/2017-03-16/example-content</id><content type="html" xml:base="http://localhost:4000/2017-03-16/example-content"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt ornare nibh, non elementum augue tempus eget. Pellentesque tempus scelerisque iaculis.<!--more--> Nullam interdum ultricies nibh quis sollicitudin. Donec ornare fermentum facilisis. Ut at sem ac sem imperdiet varius a eget tortor. Nam eu augue eget orci semper maximus in eget augue. Mauris ornare, nisl ut suscipit consectetur, mi quam interdum tellus, at rutrum quam eros ultrices mi.</p>
 
 <h1 id="headers">Headers</h1>
 
@@ -179,7 +323,7 @@ and <span class="sb">`&lt;br&gt;`</span> for line breaks.
 
 <p><br /></p>
 
-<p><em>The end</em></p>]]></content><author><name>Chester</name></author><category term="Example" /><summary type="html"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt ornare nibh, non elementum augue tempus eget. Pellentesque tempus scelerisque iaculis.]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/tale/2017-03-10/welcome-to-jekyll" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2017-03-10T00:00:00+09:00</published><updated>2017-03-10T00:00:00+09:00</updated><id>http://localhost:4000/tale/2017-03-10/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/tale/2017-03-10/welcome-to-jekyll"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+<p><em>The end</em></p>]]></content><author><name>Chester</name></author><category term="Example" /><summary type="html"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt ornare nibh, non elementum augue tempus eget. Pellentesque tempus scelerisque iaculis.]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/2017-03-10/welcome-to-jekyll" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2017-03-10T00:00:00+09:00</published><updated>2017-03-10T00:00:00+09:00</updated><id>http://localhost:4000/2017-03-10/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/2017-03-10/welcome-to-jekyll"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
 <p>To add new posts, simply add a file in the <code class="language-plaintext highlighter-rouge">_posts</code> directory that follows the convention <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
 
@@ -191,14 +335,14 @@ and <span class="sb">`&lt;br&gt;`</span> for line breaks.
 <span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
 <span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
 
-<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name>Jekyll</name></author><category term="Jekyll" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry><entry><title type="html">The Case of the Missing Post</title><link href="http://localhost:4000/tale/2017-03-07/the-case-of-the-missing-post" rel="alternate" type="text/html" title="The Case of the Missing Post" /><published>2017-03-07T00:00:00+09:00</published><updated>2017-03-07T00:00:00+09:00</updated><id>http://localhost:4000/tale/2017-03-07/the-case-of-the-missing-post</id><content type="html" xml:base="http://localhost:4000/tale/2017-03-07/the-case-of-the-missing-post"><![CDATA[<p>Kitty power! and sometimes switches in french and say “miaou” just because well why not man running from cops stops to pet cats, goes to jail, yet licks your face or drink water out of the faucet so jumps off balcony gives owner dead mouse at present then poops in litter box snatches yarn and fights with dog cat chases laser then plays in grass finds tiny spot in cupboard and sleeps all day jumps in bathtub and meows when owner fills food dish the cat knocks over the food dish cat slides down the water slide and into pool and swims even though it does not like water yet drink water out of the faucet. Pelt around the house and up and down stairs chasing phantoms.</p>
+<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name>Jekyll</name></author><category term="Jekyll" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry><entry><title type="html">The Case of the Missing Post</title><link href="http://localhost:4000/2017-03-07/the-case-of-the-missing-post" rel="alternate" type="text/html" title="The Case of the Missing Post" /><published>2017-03-07T00:00:00+09:00</published><updated>2017-03-07T00:00:00+09:00</updated><id>http://localhost:4000/2017-03-07/the-case-of-the-missing-post</id><content type="html" xml:base="http://localhost:4000/2017-03-07/the-case-of-the-missing-post"><![CDATA[<p>Kitty power! and sometimes switches in french and say “miaou” just because well why not man running from cops stops to pet cats, goes to jail, yet licks your face or drink water out of the faucet so jumps off balcony gives owner dead mouse at present then poops in litter box snatches yarn and fights with dog cat chases laser then plays in grass finds tiny spot in cupboard and sleeps all day jumps in bathtub and meows when owner fills food dish the cat knocks over the food dish cat slides down the water slide and into pool and swims even though it does not like water yet drink water out of the faucet. Pelt around the house and up and down stairs chasing phantoms.</p>
 
 <p>Sit in window and stare ooo, a bird! yum. Sit and stare. Sweet beast loves cheeseburgers. Hiss at vacuum cleaner put toy mouse in food bowl run out of litter box at full speed see owner, run in terror inspect anything brought into the house, so pelt around the house and up and down stairs chasing phantoms. Hopped up on catnip kitty scratches couch bad kitty, but eats owners hair then claws head. Lie on your belly and purr when you are asleep kitty power! or burrow under covers, so favor packaging over toy lick plastic bags or meowzer! yet unwrap toilet paper.</p>
 
-<p><a href="http://www.catipsum.com/">Cat Ipsum</a></p>]]></content><author><name>Chester</name></author><category term="Tale" /><summary type="html"><![CDATA[Kitty power! and sometimes switches in french and say “miaou” just because well why not man running from cops stops to pet cats, goes to jail, yet licks your face or drink water out of the faucet so jumps off balcony gives owner dead mouse at present then poops in litter box snatches yarn and fights with dog cat chases laser then plays in grass finds tiny spot in cupboard and sleeps all day jumps in bathtub and meows when owner fills food dish the cat knocks over the food dish cat slides down the water slide and into pool and swims even though it does not like water yet drink water out of the faucet. Pelt around the house and up and down stairs chasing phantoms.]]></summary></entry><entry><title type="html">The Mystery of the Filler Post</title><link href="http://localhost:4000/tale/2017-03-06/the-mystery-of-the-filler-post" rel="alternate" type="text/html" title="The Mystery of the Filler Post" /><published>2017-03-06T00:00:00+09:00</published><updated>2017-03-06T00:00:00+09:00</updated><id>http://localhost:4000/tale/2017-03-06/the-mystery-of-the-filler-post</id><content type="html" xml:base="http://localhost:4000/tale/2017-03-06/the-mystery-of-the-filler-post"><![CDATA[<p>Hornswaggle measured fer yer chains chase run a shot across the bow Chain Shot flogging Pirate Round galleon rope’s end aft. Prow fire in the hole keel rum Barbary Coast bilge water crimp interloper square-rigged Letter of Marque. Interloper Arr barkadeer mutiny snow chantey crow’s nest flogging gun Davy Jones’ Locker.</p>
+<p><a href="http://www.catipsum.com/">Cat Ipsum</a></p>]]></content><author><name>Chester</name></author><category term="Tale" /><summary type="html"><![CDATA[Kitty power! and sometimes switches in french and say “miaou” just because well why not man running from cops stops to pet cats, goes to jail, yet licks your face or drink water out of the faucet so jumps off balcony gives owner dead mouse at present then poops in litter box snatches yarn and fights with dog cat chases laser then plays in grass finds tiny spot in cupboard and sleeps all day jumps in bathtub and meows when owner fills food dish the cat knocks over the food dish cat slides down the water slide and into pool and swims even though it does not like water yet drink water out of the faucet. Pelt around the house and up and down stairs chasing phantoms.]]></summary></entry><entry><title type="html">The Mystery of the Filler Post</title><link href="http://localhost:4000/2017-03-06/the-mystery-of-the-filler-post" rel="alternate" type="text/html" title="The Mystery of the Filler Post" /><published>2017-03-06T00:00:00+09:00</published><updated>2017-03-06T00:00:00+09:00</updated><id>http://localhost:4000/2017-03-06/the-mystery-of-the-filler-post</id><content type="html" xml:base="http://localhost:4000/2017-03-06/the-mystery-of-the-filler-post"><![CDATA[<p>Hornswaggle measured fer yer chains chase run a shot across the bow Chain Shot flogging Pirate Round galleon rope’s end aft. Prow fire in the hole keel rum Barbary Coast bilge water crimp interloper square-rigged Letter of Marque. Interloper Arr barkadeer mutiny snow chantey crow’s nest flogging gun Davy Jones’ Locker.</p>
 
 <p>Bilge jolly boat barque topsail interloper chandler spanker scuttle Arr sloop. Shrouds belaying pin run a shot across the bow loaded to the gunwalls smartly marooned hogshead handsomely list parley. Spyglass keel Privateer mizzenmast hulk ballast case shot clipper main sheet killick.</p>
 
 <p>Careen hempen halter Letter of Marque pillage swing the lead take a caulk Sail ho jury mast walk the plank ho. Haul wind Privateer flogging Letter of Marque scuppers heave down to go on account keel Jack Ketch grapple. Marooned pink lee crow’s nest chase Pirate Round boom scourge of the seven seas landlubber or just lubber deadlights.</p>
 
-<p><a href="http://pirateipsum.me/">Pirate Ipsum</a></p>]]></content><author><name>Chester</name></author><category term="Tale" /><summary type="html"><![CDATA[Hornswaggle measured fer yer chains chase run a shot across the bow Chain Shot flogging Pirate Round galleon rope’s end aft. Prow fire in the hole keel rum Barbary Coast bilge water crimp interloper square-rigged Letter of Marque. Interloper Arr barkadeer mutiny snow chantey crow’s nest flogging gun Davy Jones’ Locker.]]></summary></entry><entry><title type="html">Pagination Post</title><link href="http://localhost:4000/tale/2017-03-05/pagination-post" rel="alternate" type="text/html" title="Pagination Post" /><published>2017-03-05T00:00:00+09:00</published><updated>2017-03-05T00:00:00+09:00</updated><id>http://localhost:4000/tale/2017-03-05/pagination-post</id><content type="html" xml:base="http://localhost:4000/tale/2017-03-05/pagination-post"><![CDATA[<p>Here we see <strong>Tale’s</strong> pagination feature in action. It is set to 5 posts per page by default. Feel free to change this number in the <code class="language-plaintext highlighter-rouge">_config.yml</code> file!</p>]]></content><author><name>Chester</name></author><category term="Tale" /><summary type="html"><![CDATA[Here we see Tale’s pagination feature in action. It is set to 5 posts per page by default. Feel free to change this number in the _config.yml file!]]></summary></entry></feed>
+<p><a href="http://pirateipsum.me/">Pirate Ipsum</a></p>]]></content><author><name>Chester</name></author><category term="Tale" /><summary type="html"><![CDATA[Hornswaggle measured fer yer chains chase run a shot across the bow Chain Shot flogging Pirate Round galleon rope’s end aft. Prow fire in the hole keel rum Barbary Coast bilge water crimp interloper square-rigged Letter of Marque. Interloper Arr barkadeer mutiny snow chantey crow’s nest flogging gun Davy Jones’ Locker.]]></summary></entry></feed>
