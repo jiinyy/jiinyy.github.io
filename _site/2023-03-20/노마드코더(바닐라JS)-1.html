@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>[JS] 노마드코더 - 바닐라 JS로 크롬 앱 만들기 (1) | Dev Story</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="[JS] 노마드코더 - 바닐라 JS로 크롬 앱 만들기 (1)" />
+<meta name="author" content="Jihyun Bang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="interpretation : 실시간 통역이므로 에러가 발생하면 그대로 직격탄 / 파일썬, 자바스크립트 → 느림 파일썬을 컴파일 언어로 만들 수도 있긴 함" />
+<meta property="og:description" content="interpretation : 실시간 통역이므로 에러가 발생하면 그대로 직격탄 / 파일썬, 자바스크립트 → 느림 파일썬을 컴파일 언어로 만들 수도 있긴 함" />
+<link rel="canonical" href="http://localhost:4000/2023-03-20/%EB%85%B8%EB%A7%88%EB%93%9C%EC%BD%94%EB%8D%94(%EB%B0%94%EB%8B%90%EB%9D%BCJS)-1" />
+<meta property="og:url" content="http://localhost:4000/2023-03-20/%EB%85%B8%EB%A7%88%EB%93%9C%EC%BD%94%EB%8D%94(%EB%B0%94%EB%8B%90%EB%9D%BCJS)-1" />
+<meta property="og:site_name" content="Dev Story" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-03-20T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="[JS] 노마드코더 - 바닐라 JS로 크롬 앱 만들기 (1)" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jihyun Bang"},"dateModified":"2023-03-20T00:00:00+09:00","datePublished":"2023-03-20T00:00:00+09:00","description":"interpretation : 실시간 통역이므로 에러가 발생하면 그대로 직격탄 / 파일썬, 자바스크립트 → 느림 파일썬을 컴파일 언어로 만들 수도 있긴 함","headline":"[JS] 노마드코더 - 바닐라 JS로 크롬 앱 만들기 (1)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2023-03-20/%EB%85%B8%EB%A7%88%EB%93%9C%EC%BD%94%EB%8D%94(%EB%B0%94%EB%8B%90%EB%9D%BCJS)-1"},"url":"http://localhost:4000/2023-03-20/%EB%85%B8%EB%A7%88%EB%93%9C%EC%BD%94%EB%8D%94(%EB%B0%94%EB%8B%90%EB%9D%BCJS)-1"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Dev Story" />
+
+  <!-- Google Analytics-->
+  
+</head>
+
+
+  <body>
+
+    <nav class="nav">
+  <div class="nav-container">
+    <a href="/">
+      <h2 class="nav-title">Dev Story</h2>
+    </a>
+    <ul>
+      <li><a href="/">Posts</a></li>
+      <li><a href="/tags">Tags</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+    <main>
+      <div class="post">
+  <div class="post-info">
+    <span>Written by</span>
+    
+        Jihyun Bang
+    
+
+    
+      <br>
+      <span>on&nbsp;</span><time datetime="2023-03-20 00:00:00 +0900">March 20, 2023</time>
+    
+  </div>
+
+  <h1 class="post-title">[JS] 노마드코더 - 바닐라 JS로 크롬 앱 만들기 (1) </h1>
+  <div class="post-line"></div>
+
+  <p>interpretation : 실시간 통역이므로 에러가 발생하면 그대로 직격탄 / 파일썬, 자바스크립트 → 느림 파일썬을 컴파일 언어로 만들 수도 있긴 함</p>
+
+<p>compilation : 한번에 통역하고 알려줌 , 컴파일을 했을 때 에러가 발생하면 수정하라고 지적질을 할 수 있음/ C → 빠름</p>
+
+<p>라이브러리 /  프레임워크</p>
+
+<p>라이브러리 :  내가 필요할때 갖다 쓸수 있음 예 ) 제이쿼리</p>
+
+<p>프레임워크 :  프레임워크의 룰을 따라서 사용해야함 예 ) 장고 웹 프레임워크</p>
+
+<h3 id="visual-studio-code">visual studio code</h3>
+
+<p>index.html : js 와 css 를 브라우저에 열수있게 도와주는 접착제 같은 역할 . index.html 파일을 브라우저에 열어야함.</p>
+
+<p>app.js : 브라우저에 바로 파일을 연다고 실행되는게 아님</p>
+
+<p>style.css :  브라우저에 바로 파일을 연다고 실행되는게 아님</p>
+
+<h3 id="javascript-type--number--string">javascript type → number / string</h3>
+
+<p>number = integer = 2</p>
+
+<p>float = 2.2</p>
+
+<p>text = string = “hello”</p>
+
+<h3 id="변수-variable">변수 (variable)</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">b</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">2</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">myName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">nico</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">);</span>  <span class="c1">//52</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">);</span>  <span class="c1">//10</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">a</span> <span class="o">/</span> <span class="nx">b</span><span class="p">);</span>  <span class="c1">//2.5</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">myName</span><span class="p">);</span> <span class="c1">//hello nico</span>
+</code></pre></div></div>
+
+<h3 id="const-상수---let-변수">const (상수) ,  let (변수)</h3>
+
+<p>const 는 업데이트가 안됨</p>
+
+<p>let 은 업데이트 가능</p>
+
+<p>→ 기본적으로는 const를 쓰지만 후에 업데이트가 필요한 변수인 경우 let을 사용함. var 은 사용하지말자
+<br />
+<br />
+<br /></p>
+<h3 id="boolean--null-undefined">boolean , null, undefined</h3>
+
+<p>true or false</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">amIFat</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">amIFat</span><span class="p">);</span>  <span class="c1">//null</span>
+</code></pre></div></div>
+
+<p>여기서 null 은 비어있다기보다는, 아무것도 없는 상태로 채워진 것. 값이 null 이지만 “아무것도 아닌 것” <strong>null 은 절대 자연적으로 발생하지 않는다.</strong></p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">amIFat</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">something</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">something</span><span class="p">);</span>  <span class="c1">//undefined</span>
+</code></pre></div></div>
+
+<p>undefined 도 문자가 아닌 타입이다. something이라는 변수는 정의했지만 값을 안주었음</p>
+
+<p>컴퓨터 메모리 안에는 존재하지만, 공간은 있지만 값이 들어가지 않은것
+<br />
+<br />
+<br /></p>
+<h3 id="array-배열">Array (배열)</h3>
+
+<p>하나의 변수 안에 데이터 타입들을 list 로 묶어 가지는 것</p>
+
+<p>월요일부터 ~ 일요일까지를 한번에 묶어보자</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mon</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">mon</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">tue</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">tue</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">wed</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">wed</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">thu</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">thu</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">fri</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">fri</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">sat</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">sat</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nb">sun</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">sund</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">daysOfWeek</span> <span class="o">=</span> <span class="nx">mon</span> <span class="o">+</span> <span class="nx">tue</span> <span class="o">+</span> <span class="nx">wed</span> <span class="o">+</span> <span class="nx">thu</span> <span class="o">+</span> <span class="nx">fri</span> <span class="o">+</span> <span class="nx">sat</span> <span class="o">+</span> <span class="nb">sun</span> <span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">daysOfWeek</span><span class="p">);</span>  <span class="c1">//montuewedthufrisatsund</span>
+</code></pre></div></div>
+
+<p>한번에 묶긴했지만 매우 보기가 안 좋다. 그리고 이중 수요일만 빼서 달라고 할때 수요일만 뺄수가 없다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mon</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">mon</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">tue</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">tue</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">wed</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">wed</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">thu</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">thu</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">fri</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">fri</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">sat</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">sat</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">daysOfWeek</span> <span class="o">=</span><span class="p">[</span><span class="nx">mon</span> <span class="p">,</span> <span class="nx">tue</span> <span class="p">,</span> <span class="nx">wed</span> <span class="p">,</span> <span class="nx">thu</span> <span class="p">,</span> <span class="nx">fri</span> <span class="p">,</span> <span class="nx">sat</span><span class="p">]</span> <span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">daysOfWeek</span><span class="p">);</span>  
+<span class="c1">//['mon', 'tue', 'wed', 'thu', 'fri', 'sat']</span>
+</code></pre></div></div>
+
+<p>이때 + 를 , 로 바꾸고 앞뒤로 [ ] 를 붙여주면 배열로 그룹화 시킬 수 있음</p>
+
+<p>string → array 로 바꾼거임</p>
+
+<p>이제 여기서 fri 만 뽑고 싶다면</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">daysOfWeek</span> <span class="o">=</span><span class="p">[</span><span class="dl">"</span><span class="s2">mon</span><span class="dl">"</span> <span class="p">,</span> <span class="dl">"</span><span class="s2">tue</span><span class="dl">"</span> <span class="p">,</span> <span class="dl">"</span><span class="s2">wed</span><span class="dl">"</span> <span class="p">,</span> <span class="dl">"</span><span class="s2">thu</span><span class="dl">"</span> <span class="p">,</span> <span class="dl">"</span><span class="s2">fri</span><span class="dl">"</span> <span class="p">,</span> <span class="dl">"</span><span class="s2">sat</span><span class="dl">"</span><span class="p">]</span> <span class="p">;</span>
+
+<span class="c1">// Get Item from Array</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">daysOfWeek</span><span class="p">[</span><span class="mi">4</span><span class="p">]);</span>   <span class="c1">//fri</span>
+</code></pre></div></div>
+
+<p>또 여기서 배열 끝에 일요일을 추가를 하고 싶다면</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">daysOfWeek</span> <span class="o">=</span><span class="p">[</span><span class="dl">"</span><span class="s2">mon</span><span class="dl">"</span> <span class="p">,</span> <span class="dl">"</span><span class="s2">tue</span><span class="dl">"</span> <span class="p">,</span> <span class="dl">"</span><span class="s2">wed</span><span class="dl">"</span> <span class="p">,</span> <span class="dl">"</span><span class="s2">thu</span><span class="dl">"</span> <span class="p">,</span> <span class="dl">"</span><span class="s2">fri</span><span class="dl">"</span> <span class="p">,</span> <span class="dl">"</span><span class="s2">sat</span><span class="dl">"</span><span class="p">]</span> <span class="p">;</span>
+
+<span class="c1">// Add one more dat to the array</span>
+<span class="nx">daysOfWeek</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="dl">"</span><span class="s2">sun</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">daysOfWeek</span><span class="p">);</span>
+<span class="c1">// ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']</span>
+</code></pre></div></div>
+<p><br />
+<br />
+<br /></p>
+<h2 id="objects">objects</h2>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">playerName</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">nico</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">playerPoints</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">playerHandsome</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">playerFat</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">little bit</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>여기서 Name, Points, Handsome, Fat 등은 player 이라는 entity(개체)에 대해 설명하고 있는 속성(property)이다.</p>
+
+<p>player.name</p>
+
+<p>player.points</p>
+
+<p>player.handsome</p>
+
+<p>player.fat</p>
+
+<p>이런식으로 정리를 해야 더 잘 정돈된다</p>
+
+<p>그럼 Array 로 정리를 해보자</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">player</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">nico</span><span class="dl">"</span><span class="p">,</span> <span class="mi">10</span> <span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="dl">"</span><span class="s2">little bit</span><span class="dl">"</span><span class="p">];</span>
+</code></pre></div></div>
+
+<p>깔끔하게 정리가 되긴 했지만 nico, 10, false, little bit 이 뭘 가르키고 있는지 모른다.</p>
+
+<p>그럼 object를 사용해보자</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">player</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">name</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">nico</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">points</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="na">fat</span> <span class="p">:</span> <span class="kc">true</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">player</span><span class="p">);</span> <span class="c1">//{name: 'nico', points: 10, fat: true}</span>
+</code></pre></div></div>
+
+<p>여기서 player 의 name을 불러내는 방법은 두가지다</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">player</span><span class="p">[</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<p>여기서 fat이 false 라고 변경해보자</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">player</span><span class="p">.</span><span class="nx">fat</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">fat</span><span class="p">);</span> <span class="c1">//false</span>
+</code></pre></div></div>
+
+<p>const는 상수로써 값을 변경할 수 없다 그랬는데 어떻게 변경이 되었을까?</p>
+
+<p>에러는 const 전체를 하나의 값으로 업데이트 하려고 할때 발생된다.</p>
+
+<p>지금은 object 안에 무언가를 수정하는 것이다.</p>
+
+<p><strong><em>즉 player 자체를 다른 걸로 업데이트 할경우는 에러가 발생하지만, player 개체 안에 fat이라는 속성을 변경하는 것에는 아무 문제가 없다.</em></strong></p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">player</span><span class="o">=</span> <span class="kc">false</span><span class="p">;</span>  <span class="c1">// Error</span>
+</code></pre></div></div>
+
+<p>이렇게 player 자체를 false 로 바꾼다면 error 가 발생한다.</p>
+
+<p>그럼, object 에 무언갈 추가하는 건 가능할까?</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">player</span><span class="p">.</span><span class="nx">lastName</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">potato</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">player</span><span class="p">);</span> 
+<span class="c1">//{name: 'niko', points: 10, fat: false, lastName: 'potato'}</span>
+</code></pre></div></div>
+
+<p>가능하다.</p>
+
+<h3 id="object는-property-를-가진-데이터를-저장하도록-해줌">object는 Property 를 가진 데이터를 저장하도록 해줌</h3>
+<p><br />
+<br />
+<br /></p>
+<h2 id="function">function</h2>
+
+<p>계속 반복해서 사용할 수 있는 코드 조각이라고 생각하면 됌</p>
+
+<p>만약, function 없이 내 친구 모두에게 인사를 하고 싶다면</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello my name is michelle</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello my name is nico</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello my name is jigu</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello my name is jihyun</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello my name is mija</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>이렇게 다 적어야함…</p>
+
+<p>여기서 바뀌는건 맨 마지막 이름 뿐임</p>
+
+<p>그러므로 이름 빼고 앞에 있는 것들을 하나로 묶자</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">sayHello</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello!</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>sayHello 를 부르면 이제부터 { } 안에 써져있는게 불러져 올거임</p>
+
+<p>그럼 함수를 어떻게 불러야될까?</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sayHello(); //hello!
+sayHello(); //hello!
+sayHello(); //hello!
+sayHello(); //hello!
+</code></pre></div></div>
+
+<p>alert()</p>
+
+<p>Array.push()</p>
+
+<p>console.log()</p>
+
+<p>여기서 () 가 function을 실행하는 방법이다.</p>
+
+<p>하지만 여기의 function을 계속 같은 값만 출력하고 있다.</p>
+
+<p>우리는 hello my name is ___ 를 반환하고 싶다.</p>
+
+<p>그럴땐 인자(argument) 를 이용한다.</p>
+
+<p>인자는 function이 실행하는 동안 어떤 정보를 function 에게 보낼 수 있는 방법이다.</p>
+
+<p>인자가 없이 함수를 출력해보자</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">alert</span><span class="p">();</span>  <span class="c1">// 빈 alert 창만 뜬다</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">();</span> <span class="c1">// 아무것도 안뜬다 </span>
+</code></pre></div></div>
+
+<p>아무것도 안 뜨는 이유는, function 실행버튼을 눌렀지만 아무 데이터를 안 보냈기 때문이다</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello</span><span class="dl">"</span><span class="p">);</span>
+<span class="nf">sayHello</span><span class="p">(</span><span class="dl">"</span><span class="s2">nico</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>console.log 라는 함수에 “Hello” 라는 데이터를 보낸거다</p>
+
+<p>console의 경우 이 데이터를 그대로 인쇄한다.</p>
+
+<p>sayHello 는 괄호를 썼으니까 실행버튼을 누른거고</p>
+
+<p>sayHello 라는 함수에 “nico” 라는 데이터를 보낸거임</p>
+
+<p>우리는 이제 데이터를 보내는 법은 안다. 그럼 받는 법을 알아보자</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">sayHello</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello! my name is C</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nf">sayHello</span><span class="p">(</span><span class="dl">"</span><span class="s2">nico</span><span class="dl">"</span><span class="p">);</span>
+<span class="nf">sayHello</span><span class="p">(</span><span class="dl">"</span><span class="s2">michelle</span><span class="dl">"</span><span class="p">);</span>
+<span class="nf">sayHello</span><span class="p">(</span><span class="dl">"</span><span class="s2">jihyun</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>sayHello 같은 경우 “hello my name is” 와 우리가 보낸 데이터를 같이 출력해야함</p>
+
+<p>우리가 데이터를 받는 방법은 () 안에 데이터를 추가해주는 거임</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">sayHello</span><span class="p">(</span> <span class="nx">nameOfPerson</span> <span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">();</span>
+
+<span class="nf">sayHello</span><span class="p">(</span><span class="dl">"</span><span class="s2">nico</span><span class="dl">"</span><span class="p">);</span>  <span class="c1">//nico</span>
+<span class="nf">sayHello</span><span class="p">(</span><span class="dl">"</span><span class="s2">michelle</span><span class="dl">"</span><span class="p">);</span>  <span class="c1">//michelle</span>
+<span class="nf">sayHello</span><span class="p">(</span><span class="dl">"</span><span class="s2">jihyun</span><span class="dl">"</span><span class="p">);</span>  <span class="c1">//jihyun</span>
+</code></pre></div></div>
+
+<p>이렇게 하면 자바스크립트는 sayHello로 보내진 첫번째 데이터가 nameOfPerson 이라는 variable로 가게 된다는 것을 안다</p>
+
+<p>인자는 2개도 받을 수 있다</p>
+
+<p>그리고 그 데이터는  {} 안에서만 받아서 출력된다</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">sayHello</span><span class="p">(</span> <span class="nx">nameOfPerson</span><span class="p">,</span> <span class="nx">age</span> <span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello my name is </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">nameOfPerson</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">and I'm </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">age</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nf">sayHello</span><span class="p">(</span><span class="dl">"</span><span class="s2">nico</span><span class="dl">"</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">// Hello my name is nicoand I'm 10</span>
+<span class="nf">sayHello</span><span class="p">(</span><span class="dl">"</span><span class="s2">michelle</span><span class="dl">"</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span> <span class="c1">// Hello my name is michelleand I'm 20</span>
+<span class="nf">sayHello</span><span class="p">(</span><span class="dl">"</span><span class="s2">jihyun</span><span class="dl">"</span><span class="p">,</span><span class="mi">30</span><span class="p">);</span> <span class="c1">// Hello my name is jihyunand I'm 30</span>
+</code></pre></div></div>
+
+<p>단순한 계산기를 만들어보자</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">plus</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nf">plus</span><span class="p">();</span>  <span class="c1">//undefined undefined</span>
+</code></pre></div></div>
+
+<p>plus(); 에 아무 데이터도 보내지 않았기 때문에 undefined 가 뜬다</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">plus</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nf">plus</span><span class="p">();</span> <span class="c1">// NaN</span>
+</code></pre></div></div>
+
+<p>NaN = Not a Number 라는 뜻이다</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">plus</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nf">plus</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">60</span><span class="p">);</span>  <span class="c1">//68</span>
+</code></pre></div></div>
+
+<p>a,b 에 뭐가 들어가든 상관없다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">plus</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nf">divide</span><span class="p">(</span><span class="nx">c</span><span class="p">,</span><span class="nx">d</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">c</span><span class="o">/</span><span class="nx">d</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nf">plus</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">60</span><span class="p">);</span>
+<span class="nf">divide</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>자 이번에는 player object 를 만들어보자</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">player</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">nico</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">sayHello</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">otherPersonsName</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">otherPersonsName</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> nice to meet you!</span><span class="dl">"</span><span class="p">);</span>
+
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">player</span><span class="p">.</span><span class="nf">sayHello</span><span class="p">(</span><span class="dl">"</span><span class="s2">nico</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// hello nico nice to meet you!</span>
+<span class="nx">player</span><span class="p">.</span><span class="nf">sayHello</span><span class="p">(</span><span class="dl">"</span><span class="s2">michelle</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// hello michelle nice to meet you!</span>
+</code></pre></div></div>
+
+<p>여기서 otherPersonName은 function의 body에서만 사용이 가능하다.</p>
+
+<p><em>{} 안에서만 사용가능</em></p>
+
+<p><code class="language-plaintext highlighter-rouge">지현이가 만든 계산기</code></p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">calculator</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">add</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="na">minus</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="na">divide</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">a</span> <span class="o">/</span> <span class="nx">b</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="na">multi</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="na">power</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">a</span> <span class="o">**</span> <span class="nx">b</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">calculator</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>  <span class="c1">//6</span>
+<span class="nx">calculator</span><span class="p">.</span><span class="nf">minus</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>  <span class="c1">//6</span>
+<span class="nx">calculator</span><span class="p">.</span><span class="nf">divide</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>  <span class="c1">//20</span>
+<span class="nx">calculator</span><span class="p">.</span><span class="nf">multi</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span> <span class="c1">//6</span>
+<span class="nx">calculator</span><span class="p">.</span><span class="nf">power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span> <span class="c1">//4</span>
+</code></pre></div></div>
+
+<p>자 이제 console.log는 그만 쓰기로 해보자</p>
+
+<p>왜냐하면 우리는 사실 function 밖에서 결과값을 얻기를 원하기 때문이다</p>
+
+<p>console.log 대신 alert를 쓴다면 브라우저에서 alert 창이 뜨고 거기에 답이 나온다</p>
+
+<p>return 을 사용해보자</p>
+
+<p>대신 어떤 작업을 처리하고 그 결과를 return 하기 위해 funtion 을 사용해보자</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">calculator</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">plus</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">plusResult</span> <span class="o">=</span> <span class="nx">calculator</span><span class="p">.</span><span class="nf">plus</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">plusResult</span><span class="p">);</span>
+</code></pre></div></div>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">calculator</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">plus</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">plusResult</span> <span class="o">=</span> <span class="nx">calculator</span><span class="p">.</span><span class="nf">plus</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">plusResult</span><span class="p">);</span>
+</code></pre></div></div>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">calculator</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">plus</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">plusResult</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">plusResult</span><span class="p">);</span>  <span class="c1">//5</span>
+</code></pre></div></div>
+
+<p>return 은 function 외부에서 값을 제공받는다. 그리고 그 값으로 내가 원하는 모든 것을 할 수 있음</p>
+
+<p>그럼 내가 만들었던 계산기에 console.log → result 로 전부 바꿔보자</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">calculator</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">add</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+    <span class="p">},</span>
+    <span class="na">minus</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">;</span>
+    <span class="p">},</span>
+    <span class="na">divide</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">a</span> <span class="o">/</span> <span class="nx">b</span><span class="p">;</span>
+    <span class="p">},</span>
+    <span class="na">multi</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">;</span>
+    <span class="p">},</span>
+    <span class="na">power</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">a</span> <span class="o">**</span> <span class="nx">b</span><span class="p">;</span>
+    <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">plusResult</span> <span class="o">=</span> <span class="nx">calculator</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>  <span class="c1">//5</span>
+<span class="kd">const</span> <span class="nx">minusResult</span> <span class="o">=</span> <span class="nx">calculator</span><span class="p">.</span><span class="nf">minus</span><span class="p">(</span><span class="nx">plusResult</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>   <span class="c1">// -5</span>
+<span class="kd">const</span> <span class="nx">divideResult</span> <span class="o">=</span> <span class="nx">calculator</span><span class="p">.</span><span class="nf">divide</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="nx">minusResult</span><span class="p">);</span> <span class="c1">// -2</span>
+<span class="kd">const</span> <span class="nx">multiResult</span> <span class="o">=</span> <span class="nx">calculator</span><span class="p">.</span><span class="nf">multi</span><span class="p">(</span><span class="nx">divideResult</span><span class="p">,</span> <span class="nx">plusResult</span><span class="p">);</span>  <span class="c1">//-10</span>
+<span class="kd">const</span> <span class="nx">powerResult</span> <span class="o">=</span> <span class="nx">calculator</span><span class="p">.</span><span class="nf">power</span><span class="p">(</span><span class="nx">multiResult</span><span class="p">,</span> <span class="nx">minusResult</span><span class="p">);</span> <span class="c1">// -0.00009999</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">plusResult</span><span class="p">,</span><span class="nx">minusResult</span><span class="p">,</span><span class="nx">divideResult</span><span class="p">,</span><span class="nx">multiResult</span><span class="p">,</span><span class="nx">powerResult</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>console.log 때와는 다르게 plusResult, minusResult, divideResult, multiResult,powerResult 에 접근이 가능하다. 이러한 변수에 다 값이 있다는 뜻이다</p>
+
+<p>console.log로 한다면 plusResult, minusResult, divideResult, multiResult,powerResult 를 쳐봤을때 undefined 가 나온다.</p>
+
+<p><strong><em>그리고 return 을 하는 순간, 그 function 은 종료된다.</em></strong></p>
+
+<p>return 앞에 console.log(“hello”); 를 친다면 console 창에 나오지만</p>
+
+<p>뒤에 쓴다면 나오지 않는다</p>
+
+<p>function은 계속 남아있는게 아니다. 실행되고 나면 사라지고 마지막엔 결과를 남겨준다.</p>
+
+</div>
+
+
+
+<div class="pagination">
+  
+  
+    <a href="/2023-03-11/%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8(2)" class="right arrow">&#8594;</a>
+  
+
+  <a href="#" class="top">Top</a>
+</div>
+    </main>
+
+    <footer>
+  <span>
+    &copy; <time datetime="2023-03-20 18:26:53 +0900">2023</time> Jihyun Bang. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
+  </span>
+</footer>
+
+  </body>
+</html>
