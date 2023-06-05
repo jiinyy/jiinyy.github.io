@@ -245,7 +245,7 @@ const arr6 = Array.from(Array(5), function (v,k) {
 	return k+1;
 });
 console.log(arr6)  // [1,2,3,4,5]
-→ v = 배열의값, k = 배열의 인덱스
+ v = 배열의값, k = 배열의 인덱스
 ```
 
 ## 배열 Method
@@ -253,7 +253,7 @@ console.log(arr6)  // [1,2,3,4,5]
 ```jsx
 // join
 
-console.log(arr.join(”,”)); //1,2,3,4,5
+console.log(arr.join(",")); //1,2,3,4,5
 
 // reverse → *****reverse 함수는 한번 변경되면 원래 함수에도 영향을 미치므로 주의해서 사용해야한다.*****
 
