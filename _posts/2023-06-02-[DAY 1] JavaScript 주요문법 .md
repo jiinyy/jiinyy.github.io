@@ -216,7 +216,7 @@ const arr = [1,1,2,3]
 console.log(arr,length)
 // 4
 
-arr[”string”] = 10;
+arr["string"] = 10;
 arr[false] = 0;
 console.log(arr) 
 // [1,1,2,3, string:10 , false:0]
