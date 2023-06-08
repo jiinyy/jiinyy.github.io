@@ -230,17 +230,17 @@ var garen = new 기계();
 
 (class 는 object 뽑는 기계일뿐)
 
-여기서 this 라는게 존재하는 이상, 기계() 는 class 역할을 대신해줄수있다
+여기서 this 라는게 존재하는 이상, 기계() 는 class 역할을 대신해줄수있습니다.
 
 this = 기계로부터 생성되는 object = instance
 
-하지만 여기서 이상한 점이 있다.
+하지만 여기서 이상한 점이 있어요.
 
 nunu 의 객체는 {q:'consume'},{W:'snowball'} 로 잘 나오지만, 
 
-garen 의 객체도 똑같이 나온다.
+garen 의 객체도 똑같이 나오죠?
 
-이럴때 사용하는게 parameter 다.
+이럴때 사용하는게 parameter 입니다.
 
 ```jsx
 <script>
@@ -274,9 +274,9 @@ new Hero();
 </script>
 ```
 
-여기서 function,class 부분은 부모, new 새로운 object 를 뽑아낸 부분은 자식이라고 표현하기도 한다.
+여기서 function,class 부분은 부모, new 새로운 object 를 뽑아낸 부분은 자식이라고 표현하기도 합니다
 
-부모/자식 상속을 구현할 수 있는 prototype 이라는 이상한 문법도 있다.
+부모/자식 상속을 구현할 수 있는 prototype 이라는 이상한 문법도 있습니다.
 <br>
 <br>
 
@@ -284,13 +284,13 @@ new Hero();
 > 이거보고 prototype 이해 못하면 강의접음(feat.애플코딩)
 > 
 
-prototype 이라는거 써도 자식 object에게 데이터 물려줄 수 있다
+prototype 이라는거 써도 자식 object에게 데이터 물려줄 수 있습니다.
 
-콘솔창에 기계.prototype 을 입력해보면 {constructor :f} 라는게 뜬다
+콘솔창에 기계.prototype 을 입력해보면 {constructor :f} 라는게 뜨는데요
 
-이처럼 기계는 자동으로 prototype 이라는 공간이 생긴다.
+이처럼 기계는 자동으로 prototype 이라는 공간이 생깁니다.
 
-prototype = 유전자다
+prototype = 유전자
 
 우리가 키가 작은 이유는?
 
@@ -311,11 +311,11 @@ var nunu = new 기계 ('strike');  // nunu.name = "kim" , nunu = 기계 {q:'stri
 </script>
 ```
 
-부모에서 프로토타입을 사용해 name 은 무엇이다 설정을 하면, 자식이 사용할수있다
+부모에서 프로토타입을 사용해 name 은 무엇이다 설정을 하면, 자식이 사용할수있습니다.
 
-즉, function 안에 작성하면 자식이 직접 가지고 있다.
+즉, function 안에 작성하면 자식이 직접 가지고 있습니다
 
-프로토타입 즉 유전자에 추가를 해주면 부모만 가지고 있다고 보면된다.
+프로토타입 즉 유전자에 추가를 해주면 부모만 가지고 있다고 보면됩니다.
 
 ### 부모 유전자에 있는 걸 자식이 사용가능한 이유는…?
 
@@ -434,9 +434,9 @@ function () { dfdfdfdf } = 콜백함수
 
 버튼을 클릭했을 때, dfdfdfdfdf 코드가 실행됨 (용도 : 순차적으로 코드가 실행됨)
 
-[참고] 콜백함수 function () { dfdfdfdf } 에는 다른데서 만든 함수도 콜백함수로 넣을 수 있다. 
+[참고] 콜백함수 function () { dfdfdfdf } 에는 다른데서 만든 함수도 콜백함수로 넣을 수 있습니다.
 
-[참고2] 콜백함수에 함수명 쓸데없이 작명할 수 있다.
+[참고2] 콜백함수에 함수명 쓸데없이 작명할 수 있습니다.
 
 Q. first() 함수 다음에 second() 함수를 실행하고 싶다면..?
 
@@ -655,17 +655,17 @@ export function hello(name) {
 </body>
 ```
 
-스크립트 속성으로 타입이 모듈로 되어있음
+스크립트 속성으로 타입이 모듈로 되어있습니다.
 
-그러면 이 스크립트는 모듈로 동작한다는 의미.
+그러면 이 스크립트는 모듈로 동작한다는 의미겠죠?
 
-모듈로 동작하게 되면 Import 를 통해 다른 파일을 불러올 수 있음
+모듈로 동작하게 되면 Import 를 통해 다른 파일을 불러올 수 있습니다
 
 여기에선 hello.js 를 불러옵니다.
 
-hello.js 에서는 hello 라는 함수를 내보내고 있음
+hello.js 에서는 hello 라는 함수를 내보내고 있습니다
 
-내보낸 hello를 import 하고 실행하면 브라우저에서 정상적으로 실행된 것 을 확인할 수 있다. 
+내보낸 hello를 import 하고 실행하면 브라우저에서 정상적으로 실행된 것 을 확인할 수 있습니다.
 
 alert = Hello John!
 <br>
